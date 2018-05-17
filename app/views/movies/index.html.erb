@@ -9,12 +9,7 @@
           <h3 class="card-title"><%= dbmovie.title %></h3>
           <p class="card-subtitle text-muted">Original Title: <%= dbmovie.original_title %></p>
           <p class="card-subtitle text-muted">Release Date: <%= dbmovie.release_date %></p>
-          <% if dbmovie.description != "" %>
-            <p class="card-text"><%= dbmovie.description %></p>
-          <% else %>
-            <p class="card-text">No Description Provided</p>
-          <% end %>
-          <a class="card-link" href="#">Director: <%= dbmovie.director %></a>
+          <p class="card-text"><%= dbmovie.description %></p>
         </div>
       </div>
     <% end %>
