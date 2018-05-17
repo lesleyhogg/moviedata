@@ -4,15 +4,16 @@ require 'net/http'
 
 class MoviesController < ApplicationController
   def index
-      #call API key in the .env file
+      # call API key in the .env file
       api = ENV.fetch('TMDB_API_KEY')
-      #parse the url into JSON
+      # parse the url into JSON
       url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api + '&region=GR'
       uri = URI(url)
+      # in the future the movie retrieval process should be moved into a background process
       response = Net::HTTP.get(uri)
       @movies = JSON.parse(response)
 
-      #if there are results, pull info from the database hash
+      # if there are results, pull info from the database hash
       unless @movies['results'].nil?
         @movies['results'].each do |movie|
           if Movie.where(tmdbid: movie['id'].to_i).empty?
