@@ -5,7 +5,7 @@ require 'net/http'
 class MoviesController < ApplicationController
   def index
       #call API key in the .env file
-      api = ENV['TMDB_API_KEY']
+      api = ENV.fetch('TMDB_API_KEY')
       #parse the url into JSON
       url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + api + '&region=GR'
       uri = URI(url)
