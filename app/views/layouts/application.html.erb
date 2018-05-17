@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moviedata</title>
+    <title>MovieData</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="header">
+        <h1>MovieData</h1>
+        <p>A Workable Project</p>
+      </div>
+      <div class="body">
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <p>Powered by The Movie Database API.</p>
+      </div>
+    </div>
   </body>
 </html>

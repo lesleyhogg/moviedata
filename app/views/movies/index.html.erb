@@ -1,2 +1,21 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<div class="jumbotron">
+  <h2>Now Playing in Greece</h2>
+</div>
+<div class="movies">
+    <% @dbmovies.each do |dbmovie| %>
+      <div class="card">
+        <img class="card-img-top" src="<%= "https://image.tmdb.org/t/p/w500#{dbmovie.poster_path.to_s}" %>" alt="movie poster">
+        <div class="card-body">
+          <h3 class="card-title"><%= dbmovie.title %></h3>
+          <p class="card-subtitle text-muted">Original Title: <%= dbmovie.original_title %></p>
+          <p class="card-subtitle text-muted">Release Date: <%= dbmovie.release_date %></p>
+          <% if dbmovie.description != "" %>
+            <p class="card-text"><%= dbmovie.description %></p>
+          <% else %>
+            <p class="card-text">No Description Provided</p>
+          <% end %>
+          <a class="card-link" href="#">Director: <%= dbmovie.director %></a>
+        </div>
+      </div>
+    <% end %>
+</div>

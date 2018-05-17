@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  original_title: MyString
+  director: MyString
+  tmdbid: 1
+  release_date: 2018-05-16
+
+two:
+  title: MyString
+  description: MyString
+  original_title: MyString
+  director: MyString
+  tmdbid: 1
+  release_date: 2018-05-16
