@@ -21,7 +21,6 @@ class MoviesController < ApplicationController
         end
       end
 
-      #establish variable
       @dbmovies = Movie.all
     end
 end
