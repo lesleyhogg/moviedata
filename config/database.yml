@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: Lesley
-  password: 
+  password:
 
 development:
   <<: *default
@@ -82,7 +82,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: moviedata_production
-  username: moviedata
-  password: <%= ENV['MOVIEDATA_DATABASE_PASSWORD'] %>
+  production:
+  url: <%= ENV['DATABASE_URL'] %>
