@@ -10,6 +10,7 @@
           <p class="card-subtitle text-muted">Original Title: <%= dbmovie.original_title %></p>
           <p class="card-subtitle text-muted">Release Date: <%= dbmovie.release_date %></p>
           <p class="card-text"><%= dbmovie.description %></p>
+          <p class="card-text">Director(s):<% format_directors(dbmovie.directors).each do |director| %> <%= link_to(director[0], 'http://www.imdb.com/name/' + director[1].to_s) %> <%end%></p>
         </div>
       </div>
     <% end %>
