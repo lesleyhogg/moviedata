@@ -23,14 +23,16 @@ class MoviesController < ApplicationController
             crew_response = Net::HTTP.get(crew_uri)
             crew_hash = JSON.parse(crew_response)
             directors = []
-            crew_hash['crew'].each do |person|
-              if person['job'] == 'Director'
-                directors.push(person['name'])
-                directors_url = 'https://api.themoviedb.org/3/person/' + person['id'].to_s + '?api_key='+ api
-                directors_uri = URI(directors_url)
-                directors_response = Net::HTTP.get(directors_uri)
-                directors_hash = JSON.parse(directors_response)
-                directors.push(directors_hash['imdb_id'])
+            unless crew_hash['crew'].nil?
+              crew_hash['crew'].each do |person|
+                if person['job'] == 'Director'
+                  directors.push(person['name'])
+                  directors_url = 'https://api.themoviedb.org/3/person/' + person['id'].to_s + '?api_key='+ api
+                  directors_uri = URI(directors_url)
+                  directors_response = Net::HTTP.get(directors_uri)
+                  directors_hash = JSON.parse(directors_response)
+                  directors.push(directors_hash['imdb_id'])
+                end
               end
             end
 
@@ -40,5 +42,11 @@ class MoviesController < ApplicationController
       end
 
       @dbmovies = Movie.all
+
+      # makes the director to imdb link helper work
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 end
