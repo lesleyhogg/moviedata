@@ -16,7 +16,7 @@ Further info about the TMDB API may be found here: https://developers.themoviedb
 
 To run the application you must run the following commands
 
-- Gems: bundle install
+- Gems: `bundle install`
 - Database: `rails db:create`
 - Database: `rails db:migrate`
 - Create ENV: `export TMDB_API_KEY="YOUR_KEY_HERE"`
