@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## MovieData - A Ruby on Rails app utilizing the TMDB API
 
-Things you may want to cover:
+See the app in action on Heroku: https://secret-earth-61668.herokuapp.com/
 
-* Ruby version
+Further info about the TMDB API may be found here: https://developers.themoviedb.org/3/getting-started/introduction
 
-* System dependencies
+### Stack
 
-* Configuration
+* Ruby 2.3.6
+* Ruby on Rails 5.2.0
+* PostgreSQL
 
-* Database creation
+### How to use locally
 
-* Database initialization
+To run the application you must run the following commands
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Gems: `bundle install`
+- Database: `rails db:create`
+- Database: `rails db:migrate`
+- Create ENV: `export TMDB_API_KEY="YOUR_KEY_HERE"`
+- Run the server `rails s`
