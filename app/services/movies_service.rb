@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+require 'net/http'
 
 # Pulls data from the TMDB via API
 # and saves what is now playing to the database
